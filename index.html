@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Project Hub</title>
+    <title>My Project Index</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>My Project Hub</h1>
-            <p>A central dashboard for all my Netlify projects.</p>
+            <h1>My Project Index</h1>
+            <p>A central list of all my projects.</p>
         </header>
         
-        <main id="project-grid" class="project-grid">
-            <!-- Project cards will be inserted here by JavaScript -->
-        </main>
+        <a href="YOUR_GOOGLE_FORM_URL_HERE" class="add-project-button" target="_blank" rel="noopener noreferrer">
+            Add a New Project
+        </a>
+
+        <!-- An Ordered List will automatically provide serial numbers -->
+        <ol id="project-list" class="project-list"></ol>
+
     </div>
     <script src="script.js"></script>
 </body>
