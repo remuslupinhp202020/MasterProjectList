@@ -2,96 +2,80 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f0f2f5;
-    color: #333;
+    background-color: #f8f9fa;
+    color: #212529;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 800px;
     margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
 }
 
 header {
     text-align: center;
-    margin-bottom: 40px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 header h1 {
-    font-size: 2.5em;
-    color: #1c1e21;
+    font-size: 2.2em;
+    color: #343a40;
 }
 
-.project-grid {
-    display: grid;
-    /* This creates a responsive grid of cards */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.project-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-}
-
-.card-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.card-icon {
-    font-size: 2em;
-    margin-right: 15px;
-}
-
-.card-header h2 {
-    margin: 0;
-    font-size: 1.5em;
-    color: #0d1117;
-}
-
-.card-description {
-    font-size: 1em;
-    line-height: 1.6;
-    color: #57606a;
-    flex-grow: 1; /* Pushes buttons to the bottom */
-}
-
-.card-buttons {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.card-buttons a {
-    flex-grow: 1;
-    text-align: center;
-    padding: 10px;
+.add-project-button {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 30px auto;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    text-align: center;
     transition: background-color 0.3s ease;
 }
 
-.button-live {
-    background-color: #2ea44f;
-    color: white;
+.add-project-button:hover {
+    background-color: #0056b3;
 }
-.button-live:hover { background-color: #278c41; }
 
-.button-github {
-    background-color: #f6f8fa;
-    color: #24292f;
-    border: 1px solid #d0d7de;
+/* Styling for the numbered list */
+.project-list {
+    list-style: none; /* We will create custom counters */
+    counter-reset: project-counter;
+    padding-left: 0;
 }
-.button-github:hover { background-color: #eef1f4; }
+
+.project-list li {
+    counter-increment: project-counter;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+}
+
+.project-list li::before {
+    content: counter(project-counter);
+    background: #e9ecef;
+    color: #495057;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.project-list li a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.project-list li a:hover {
+    text-decoration: underline;
+}
